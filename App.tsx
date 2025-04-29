@@ -1,60 +1,92 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Picker } from '@react-native-picker/picker';
 
-const App = (): React.JSX.Element => {
-  const [playing, setPlaying] = useState<boolean>(false);
-
+const HomeScreen = () => {
+  const [playing, setPlaying] = useState(false);
   const togglePlayPause = () => {
     setPlaying(prev => !prev);
   };
 
   return (
-    <ImageBackground
-      source={require('./assets/radio_bg.png')}
-      style={styles.background}
-      resizeMode="cover"
-    >
-      <View style={styles.container}>
-        <Text style={styles.title}>Mechanical Radio</Text>
-        <View style={styles.radioDial}>
-          <Text style={styles.radioText}>
-            {playing ? 'Playing...' : 'Paused'}
-          </Text>
-        </View>
-        <TouchableOpacity style={styles.button} onPress={togglePlayPause}>
-          <Text style={styles.buttonText}>
-            {playing ? 'Pause' : 'Play'}
-          </Text>
-        </TouchableOpacity>
+    <View style={styles.homeContainer}>
+      <Text style={styles.title}>Mechanical Radio</Text>
+      <View style={styles.radioDial}>
+        <Text style={styles.radioText}>
+          {playing ? 'Playing...' : 'Paused'}
+        </Text>
       </View>
-    </ImageBackground>
+      <TouchableOpacity style={styles.button} onPress={togglePlayPause}>
+        <Text style={styles.buttonText}>
+          {playing ? 'Pause' : 'Play'}
+        </Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+const SettingsScreen = () => {
+  const [topic, setTopic] = useState("Music");
+
+  return (
+    <View style={styles.settingsContainer}>
+      <Text style={styles.title}>Select Radio Topic</Text>
+      <Picker
+        selectedValue={topic}
+        style={styles.picker}
+        onValueChange={(itemValue) => setTopic(itemValue)}
+      >
+        <Picker.Item label="Music" value="Music" />
+        <Picker.Item label="Talk" value="Talk" />
+        <Picker.Item label="News" value="News" />
+        <Picker.Item label="Sports" value="Sports" />
+      </Picker>
+      <Text style={styles.selectedTopic}>Selected: {topic}</Text>
+    </View>
+  );
+};
+
+const Tab = createBottomTabNavigator();
+
+const App = (): React.JSX.Element => {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator screenOptions={{ 
+        headerShown: false,
+        tabBarActiveTintColor: '#DDB880',
+        tabBarInactiveTintColor: '#423D35',
+        tabBarStyle: { backgroundColor: '#3F3B33' }
+      }}>
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Settings" component={SettingsScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 };
 
 const styles = StyleSheet.create({
-  background: {
+  homeContainer: {
     flex: 1,
-    backgroundColor: '#A97338', // main background color
+    backgroundColor: '#1C1C1E',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  container: {
-    backgroundColor: 'rgba(63, 59, 51, 0.9)', // third color with opacity
-    marginHorizontal: '10%',
-    borderRadius: 20,
     padding: 20,
+  },
+  settingsContainer: {
+    flex: 1,
+    backgroundColor: '#1C1C1E',
+    justifyContent: 'center',
     alignItems: 'center',
-    elevation: 10,
-    shadowColor: '#000',
-    shadowOpacity: 0.3,
-    shadowRadius: 10,
-    shadowOffset: { width: 0, height: 5 },
+    padding: 20,
   },
   title: {
     fontSize: 28,
     fontWeight: '600',
-    color: '#DDB880', // secondary color for the title
+    color: '#DDB880',
     marginBottom: 20,
+    fontFamily: 'Doto-Bold'
   },
   radioDial: {
     width: 250,
@@ -62,7 +94,7 @@ const styles = StyleSheet.create({
     borderRadius: 125,
     backgroundColor: '#f5f5f5',
     borderWidth: 5,
-    borderColor: '#DDB880', // main color as accent for the dial border
+    borderColor: '#DDB880',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
@@ -74,10 +106,11 @@ const styles = StyleSheet.create({
   radioText: {
     fontSize: 22,
     fontWeight: '500',
-    color: '#423D35', // secondary color for radio text
+    color: '#423D35',
+    fontFamily: 'Doto-Bold'
   },
   button: {
-    backgroundColor: '#DDB880', // main color as the button background
+    backgroundColor: '#DDB880',
     paddingVertical: 12,
     paddingHorizontal: 32,
     borderRadius: 25,
@@ -89,8 +122,19 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 20,
     color: '#423D35',
+    fontFamily: 'Doto-Bold'
+  },
+  picker: {
+    height: 50,
+    width: 200,
+    color: '#DDB880',
+    backgroundColor: '#3F3B33',
+  },
+  selectedTopic: {
+    marginTop: 20,
+    fontSize: 18,
+    color: '#DDB880',
   },
 });
-
 
 export default App;

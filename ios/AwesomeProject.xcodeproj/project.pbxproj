@@ -11,6 +11,24 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		B78262633289471F884AE141 /* Doto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A061475A59C4CCEB8078B34 /* Doto-Black.ttf */; };
+		46A1B76C99674318AEFC3870 /* Doto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAEE1158351543DDB842AB10 /* Doto-Bold.ttf */; };
+		DBEA2F0D9B404465BDC80F6A /* Doto-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 216C1576C84D487981CE74AC /* Doto-ExtraBold.ttf */; };
+		EA922CA2436B47F4ADE6BB97 /* Doto-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03AC3C1F1FDB413582A850A2 /* Doto-ExtraLight.ttf */; };
+		B21038CF18724DF9829E0D79 /* Doto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73042AA2113748078CDC6742 /* Doto-Light.ttf */; };
+		AB4DEC8E51DE4E2CA4472C3F /* Doto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B427E02AFF584B94A16EB579 /* Doto-Medium.ttf */; };
+		AC195936A274469A83BECB46 /* Doto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 876DACCB5EAB4E5082992408 /* Doto-Regular.ttf */; };
+		DAE760E2298B43A5B257082A /* Doto-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17F9C195BBC2462B9AFA934B /* Doto-SemiBold.ttf */; };
+		A62DCCB90A854A88B0B51522 /* Doto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E1D9F65B8C648A0B7A013A9 /* Doto-Thin.ttf */; };
+		9D1A6A14C0F648A18396B47E /* Doto_Rounded-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D84687B243D4FEDA19390CC /* Doto_Rounded-Black.ttf */; };
+		50B24348B4064C609CDEC28F /* Doto_Rounded-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4EE6505077794014B4C48E6B /* Doto_Rounded-Bold.ttf */; };
+		ED8B2FF7F0334E8AA65B8544 /* Doto_Rounded-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D6B7ABAFAA34AC892D5FB20 /* Doto_Rounded-ExtraBold.ttf */; };
+		6ABAD112DB3943AC951F4D1D /* Doto_Rounded-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8885D51A07FA446FB0B6245B /* Doto_Rounded-ExtraLight.ttf */; };
+		EFDF8CD1B1A64E21AB1AD649 /* Doto_Rounded-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4676A60E2374991AED18BE0 /* Doto_Rounded-Light.ttf */; };
+		C81C1D5B828842E5BFE18C0A /* Doto_Rounded-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD668D5F51D479EA8B032D7 /* Doto_Rounded-Medium.ttf */; };
+		1EC59DBB56EE4537B1F0A952 /* Doto_Rounded-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 090CC30698F1410DB22EC6AC /* Doto_Rounded-Regular.ttf */; };
+		3BC7145740AE44428DEAE448 /* Doto_Rounded-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18D249A966444448839D4FAE /* Doto_Rounded-SemiBold.ttf */; };
+		9ADF8F7DBD90461C95FACB4F /* Doto_Rounded-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AE0710ED7834B1D94058AC6 /* Doto_Rounded-Thin.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +53,24 @@
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = AwesomeProject/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = AwesomeProject/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		1A061475A59C4CCEB8078B34 /* Doto-Black.ttf */ = {isa = PBXFileReference; name = "Doto-Black.ttf"; path = "../assets/fonts/Doto-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FAEE1158351543DDB842AB10 /* Doto-Bold.ttf */ = {isa = PBXFileReference; name = "Doto-Bold.ttf"; path = "../assets/fonts/Doto-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		216C1576C84D487981CE74AC /* Doto-ExtraBold.ttf */ = {isa = PBXFileReference; name = "Doto-ExtraBold.ttf"; path = "../assets/fonts/Doto-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		03AC3C1F1FDB413582A850A2 /* Doto-ExtraLight.ttf */ = {isa = PBXFileReference; name = "Doto-ExtraLight.ttf"; path = "../assets/fonts/Doto-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		73042AA2113748078CDC6742 /* Doto-Light.ttf */ = {isa = PBXFileReference; name = "Doto-Light.ttf"; path = "../assets/fonts/Doto-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B427E02AFF584B94A16EB579 /* Doto-Medium.ttf */ = {isa = PBXFileReference; name = "Doto-Medium.ttf"; path = "../assets/fonts/Doto-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		876DACCB5EAB4E5082992408 /* Doto-Regular.ttf */ = {isa = PBXFileReference; name = "Doto-Regular.ttf"; path = "../assets/fonts/Doto-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		17F9C195BBC2462B9AFA934B /* Doto-SemiBold.ttf */ = {isa = PBXFileReference; name = "Doto-SemiBold.ttf"; path = "../assets/fonts/Doto-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8E1D9F65B8C648A0B7A013A9 /* Doto-Thin.ttf */ = {isa = PBXFileReference; name = "Doto-Thin.ttf"; path = "../assets/fonts/Doto-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7D84687B243D4FEDA19390CC /* Doto_Rounded-Black.ttf */ = {isa = PBXFileReference; name = "Doto_Rounded-Black.ttf"; path = "../assets/fonts/Doto_Rounded-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4EE6505077794014B4C48E6B /* Doto_Rounded-Bold.ttf */ = {isa = PBXFileReference; name = "Doto_Rounded-Bold.ttf"; path = "../assets/fonts/Doto_Rounded-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9D6B7ABAFAA34AC892D5FB20 /* Doto_Rounded-ExtraBold.ttf */ = {isa = PBXFileReference; name = "Doto_Rounded-ExtraBold.ttf"; path = "../assets/fonts/Doto_Rounded-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8885D51A07FA446FB0B6245B /* Doto_Rounded-ExtraLight.ttf */ = {isa = PBXFileReference; name = "Doto_Rounded-ExtraLight.ttf"; path = "../assets/fonts/Doto_Rounded-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C4676A60E2374991AED18BE0 /* Doto_Rounded-Light.ttf */ = {isa = PBXFileReference; name = "Doto_Rounded-Light.ttf"; path = "../assets/fonts/Doto_Rounded-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9FD668D5F51D479EA8B032D7 /* Doto_Rounded-Medium.ttf */ = {isa = PBXFileReference; name = "Doto_Rounded-Medium.ttf"; path = "../assets/fonts/Doto_Rounded-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		090CC30698F1410DB22EC6AC /* Doto_Rounded-Regular.ttf */ = {isa = PBXFileReference; name = "Doto_Rounded-Regular.ttf"; path = "../assets/fonts/Doto_Rounded-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		18D249A966444448839D4FAE /* Doto_Rounded-SemiBold.ttf */ = {isa = PBXFileReference; name = "Doto_Rounded-SemiBold.ttf"; path = "../assets/fonts/Doto_Rounded-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5AE0710ED7834B1D94058AC6 /* Doto_Rounded-Thin.ttf */ = {isa = PBXFileReference; name = "Doto_Rounded-Thin.ttf"; path = "../assets/fonts/Doto_Rounded-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +129,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				2DE3F1BFA53E45E5BC66765F /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -115,6 +152,32 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		2DE3F1BFA53E45E5BC66765F /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				1A061475A59C4CCEB8078B34 /* Doto-Black.ttf */,
+				FAEE1158351543DDB842AB10 /* Doto-Bold.ttf */,
+				216C1576C84D487981CE74AC /* Doto-ExtraBold.ttf */,
+				03AC3C1F1FDB413582A850A2 /* Doto-ExtraLight.ttf */,
+				73042AA2113748078CDC6742 /* Doto-Light.ttf */,
+				B427E02AFF584B94A16EB579 /* Doto-Medium.ttf */,
+				876DACCB5EAB4E5082992408 /* Doto-Regular.ttf */,
+				17F9C195BBC2462B9AFA934B /* Doto-SemiBold.ttf */,
+				8E1D9F65B8C648A0B7A013A9 /* Doto-Thin.ttf */,
+				7D84687B243D4FEDA19390CC /* Doto_Rounded-Black.ttf */,
+				4EE6505077794014B4C48E6B /* Doto_Rounded-Bold.ttf */,
+				9D6B7ABAFAA34AC892D5FB20 /* Doto_Rounded-ExtraBold.ttf */,
+				8885D51A07FA446FB0B6245B /* Doto_Rounded-ExtraLight.ttf */,
+				C4676A60E2374991AED18BE0 /* Doto_Rounded-Light.ttf */,
+				9FD668D5F51D479EA8B032D7 /* Doto_Rounded-Medium.ttf */,
+				090CC30698F1410DB22EC6AC /* Doto_Rounded-Regular.ttf */,
+				18D249A966444448839D4FAE /* Doto_Rounded-SemiBold.ttf */,
+				5AE0710ED7834B1D94058AC6 /* Doto_Rounded-Thin.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -185,6 +248,24 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				B78262633289471F884AE141 /* Doto-Black.ttf in Resources */,
+				46A1B76C99674318AEFC3870 /* Doto-Bold.ttf in Resources */,
+				DBEA2F0D9B404465BDC80F6A /* Doto-ExtraBold.ttf in Resources */,
+				EA922CA2436B47F4ADE6BB97 /* Doto-ExtraLight.ttf in Resources */,
+				B21038CF18724DF9829E0D79 /* Doto-Light.ttf in Resources */,
+				AB4DEC8E51DE4E2CA4472C3F /* Doto-Medium.ttf in Resources */,
+				AC195936A274469A83BECB46 /* Doto-Regular.ttf in Resources */,
+				DAE760E2298B43A5B257082A /* Doto-SemiBold.ttf in Resources */,
+				A62DCCB90A854A88B0B51522 /* Doto-Thin.ttf in Resources */,
+				9D1A6A14C0F648A18396B47E /* Doto_Rounded-Black.ttf in Resources */,
+				50B24348B4064C609CDEC28F /* Doto_Rounded-Bold.ttf in Resources */,
+				ED8B2FF7F0334E8AA65B8544 /* Doto_Rounded-ExtraBold.ttf in Resources */,
+				6ABAD112DB3943AC951F4D1D /* Doto_Rounded-ExtraLight.ttf in Resources */,
+				EFDF8CD1B1A64E21AB1AD649 /* Doto_Rounded-Light.ttf in Resources */,
+				C81C1D5B828842E5BFE18C0A /* Doto_Rounded-Medium.ttf in Resources */,
+				1EC59DBB56EE4537B1F0A952 /* Doto_Rounded-Regular.ttf in Resources */,
+				3BC7145740AE44428DEAE448 /* Doto_Rounded-SemiBold.ttf in Resources */,
+				9ADF8F7DBD90461C95FACB4F /* Doto_Rounded-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
