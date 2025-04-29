@@ -1,12 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import TrackPlayer from 'react-native-track-player';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Picker } from '@react-native-picker/picker';
 
+const mp3Url = "https://your-url-to-file.mp3"; // replace with your mp3 URL
+
 const HomeScreen = () => {
   const [playing, setPlaying] = useState(false);
-  const togglePlayPause = () => {
+
+  useEffect(() => {
+    // Setup TrackPlayer when the component mounts
+    const setupTrackPlayer = async () => {
+      await TrackPlayer.setupPlayer();
+    };
+    setupTrackPlayer();
+
+    return () => {
+      TrackPlayer.destroy();
+    };
+  }, []);
+
+  const togglePlayPause = async () => {
+    if (!playing) {
+      const queue = await TrackPlayer.getQueue();
+      if (queue.length === 0) {
+        await TrackPlayer.add({
+          id: 'track-001',
+          url: mp3Url,
+          title: 'Mechanical Radio Track',
+          artist: 'Radio',
+        });
+      }
+      await TrackPlayer.play();
+    } else {
+      await TrackPlayer.pause();
+    }
     setPlaying(prev => !prev);
   };
 
