@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import TrackPlayer from 'react-native-track-player';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Picker } from '@react-native-picker/picker';
+import TrackPlayer, { Capability } from 'react-native-track-player';
 
-const mp3Url = "https://your-url-to-file.mp3"; // replace with your mp3 URL
+const mp3Url = "http://localhost:8080/next_audio"; // replace with your mp3 URL
 
 const HomeScreen = () => {
   const [playing, setPlaying] = useState(false);
@@ -14,30 +14,41 @@ const HomeScreen = () => {
     // Setup TrackPlayer when the component mounts
     const setupTrackPlayer = async () => {
       await TrackPlayer.setupPlayer();
+      await TrackPlayer.updateOptions({
+        capabilities: [
+        Capability.Play,
+        Capability.Pause,
+        Capability.SkipToNext,
+        Capability.SkipToPrevious
+        ]})
     };
     setupTrackPlayer();
 
     return () => {
-      TrackPlayer.destroy();
+      //TrackPlayer.destroy();
     };
   }, []);
 
   const togglePlayPause = async () => {
-    if (!playing) {
-      const queue = await TrackPlayer.getQueue();
-      if (queue.length === 0) {
-        await TrackPlayer.add({
-          id: 'track-001',
-          url: mp3Url,
-          title: 'Mechanical Radio Track',
-          artist: 'Radio',
-        });
+    try {
+      if (!playing) {
+        const queue = await TrackPlayer.getQueue();
+        if (queue.length === 0) {
+          await TrackPlayer.add({
+            id: 'track-001',
+            url: mp3Url,
+            title: 'Mechanical Radio Track',
+            artist: 'Radio',
+          });
+        }
+        await TrackPlayer.play();
+      } else {
+        await TrackPlayer.pause();
       }
-      await TrackPlayer.play();
-    } else {
-      await TrackPlayer.pause();
+      setPlaying(prev => !prev);
+    } catch (error) {
+      console.error("Error in togglePlayPause:", error);
     }
-    setPlaying(prev => !prev);
   };
 
   return (
