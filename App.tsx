@@ -5,8 +5,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Picker } from '@react-native-picker/picker';
 import TrackPlayer, { Capability } from 'react-native-track-player';
 
-const mp3Url = "http://localhost:8080/next_audio"; // replace with your mp3 URL
-
+const audioUrl = "http://localhost:8080/next_audio"; // replace with your mp3 URL
+let mp3Url: string;
+let start: number;
 const HomeScreen = () => {
   const [playing, setPlaying] = useState(false);
 
@@ -32,18 +33,23 @@ const HomeScreen = () => {
   const togglePlayPause = async () => {
     try {
       if (!playing) {
+        const response = await fetch(audioUrl);
+        const data = await response.json();
+        mp3Url = data.url; // Extract the mp3 URL from the response
+        start = data.start;
         const queue = await TrackPlayer.getQueue();
         if (queue.length === 0) {
-          await TrackPlayer.add({
+          await TrackPlayer.load({
             id: 'track-001',
             url: mp3Url,
             title: 'Mechanical Radio Track',
             artist: 'Radio',
           });
         }
+        await TrackPlayer.seekTo(start);
         await TrackPlayer.play();
       } else {
-        await TrackPlayer.pause();
+        await TrackPlayer.reset();
       }
       setPlaying(prev => !prev);
     } catch (error) {
