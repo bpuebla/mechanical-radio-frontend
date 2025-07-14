@@ -78,7 +78,28 @@ const styles = StyleSheet.create({
   loginText: {
     fontSize: 24,
     color: '#DDB880',
-    fontFamily: 'Doto-Bold'
+    fontFamily: 'Doto-Bold',
+    paddingBottom: 20
+  },
+  input: {
+    height: 40,
+    borderColor: '#DDB880',
+    borderWidth: 1,
+    marginBottom: 10,
+    paddingHorizontal: 10,
+    width: '80%',
+    color: '#DDB880',
+    fontFamily: 'Doto-Regular'
+  },
+  buttonLogin: {
+    backgroundColor: '#DDB880',
+    paddingVertical: 10,
+    paddingHorizontal: 0,
+    borderRadius: 5,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginHorizontal: 8,
   },
 });
 

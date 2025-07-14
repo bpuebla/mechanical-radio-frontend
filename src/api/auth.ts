@@ -1,15 +1,15 @@
 import request from './client';
 
-export const login = (username: string, password: string) =>
+export const login = (email: string, password: string) =>
   request('/auth/login', {
     method: 'POST',
-    body: JSON.stringify({ username, password }),
+    body: JSON.stringify({ email, password }),
   });
 
-export const register = (username: string, password: string) =>
+export const register = (email: string, password: string) =>
   request('/auth/register', {
     method: 'POST',
-    body: JSON.stringify({ username, password }),
+    body: JSON.stringify({ email, password }),
   });
 
 export const refresh = (refreshToken: string) =>

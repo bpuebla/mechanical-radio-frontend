@@ -1,4 +1,4 @@
-const BASE_URL = 'https://your.api.url';
+const BASE_URL = 'http://192.168.1.132:80';
 
 const request = async (path: string, options: RequestInit = {}) => {
   const res = await fetch(`${BASE_URL}${path}`, {
