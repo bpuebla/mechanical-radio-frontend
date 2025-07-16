@@ -17,3 +17,14 @@ export const refresh = (refreshToken: string) =>
     method: 'POST',
     body: JSON.stringify({ refresh: refreshToken }),
   });
+
+export const googleLogin = async (googleToken: string) =>
+  request('/auth/refresh', {
+    method: 'POST',
+    body: JSON.stringify({ token: googleToken }),
+  });
+
+export const logout = async (): Promise<void> => 
+  request('/auth/logout', {
+    method: 'POST',
+  });

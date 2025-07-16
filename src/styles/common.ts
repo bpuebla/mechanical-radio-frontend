@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-const styles = StyleSheet.create({
+const commonStyles = StyleSheet.create({
   homeContainer: {
     flex: 1,
     backgroundColor: '#1C1C1E',
@@ -53,6 +53,9 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
     shadowOffset: { width: 0, height: 4 },
   },
+  buttonDisabled: {
+    opacity: 0.6,
+  },
   buttonText: {
     fontSize: 20,
     color: '#423D35',
@@ -69,18 +72,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#DDB880',
   },
-  loginContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#1C1C1E',
-  },
-  loginText: {
-    fontSize: 24,
-    color: '#DDB880',
-    fontFamily: 'Doto-Bold',
-    paddingBottom: 20
-  },
   input: {
     height: 40,
     borderColor: '#DDB880',
@@ -91,16 +82,6 @@ const styles = StyleSheet.create({
     color: '#DDB880',
     fontFamily: 'Doto-Regular'
   },
-  buttonLogin: {
-    backgroundColor: '#DDB880',
-    paddingVertical: 10,
-    paddingHorizontal: 0,
-    borderRadius: 5,
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginHorizontal: 8,
-  },
 });
 
-export default styles;
+export default commonStyles;

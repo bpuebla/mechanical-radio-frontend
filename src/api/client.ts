@@ -3,7 +3,7 @@ import useAuth from '../store/useAuth'; // adjust path as needed
 const BASE_URL = 'http://192.168.1.132:80';
 
 const request = async (path: string, options: RequestInit = {}) => {
-  const token = useAuth.getState().tokens?.accessToken;
+  const token = useAuth.getState().accessToken;
 
   const headers = {
     'Content-Type': 'application/json',
