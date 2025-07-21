@@ -5,12 +5,7 @@ import styles from '../styles/common';
 import PlayButton from '../components/PlayButton';  
 import RadioDial from '../components/RadioDial';
 import setupTrackPlayer from '../services/setupTrackPlayer';
-
-
-const audioUrl = "http://192.168.1.132:80/next_track?user_id=13"; // replace with your mp3 URL
-let mp3Url: string;
-let id: number;
-let start: number;
+import { getNextTrack } from '../api/tracks';
 
 const HomeScreen = () => {
   const [playing, setPlaying] = useState(false);
@@ -28,26 +23,13 @@ const HomeScreen = () => {
   const togglePlayPause = async () => {
     try {
       if (!playing) {
-        const response = await fetch(audioUrl, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-          },});
-        if (!response.ok) {
-          console.error(`HTTP error! status: ${response.status}`);
-        }
-        console.warn("Fetching audio URL:", audioUrl);
-        const data = await response.json();
-        // console.error("Fetching audio URL:", await response);
-        mp3Url = data.audio_url; // Extract the mp3 URL from the response
-        id = data.id; // Extract the track ID from the response
+        const data = await getNextTrack()
         // start = data.start;
         const queue = await TrackPlayer.getQueue();
         if (queue.length === 0) {
           await TrackPlayer.add({
-            id: id,
-            url: mp3Url,
+            id: data.id,
+            url: data.url,
             title: 'Mechanical Radio',
             artist: 'Georgi',
           });

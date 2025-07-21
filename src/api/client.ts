@@ -4,7 +4,7 @@ const BASE_URL = 'http://192.168.1.132:80';
 
 const request = async (path: string, options: RequestInit = {}) => {
   const token = useAuth.getState().accessToken;
-
+  console.log(useAuth.getState());
   const headers = {
     'Content-Type': 'application/json',
     ...(options.headers || {}),

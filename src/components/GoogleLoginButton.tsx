@@ -23,13 +23,15 @@ const GoogleLoginButton = () => {
       console.log('Google login result:', result);
       // Send the token to your backend
       const response = await googleLogin(result.accessToken);
-      
+      console.log('Backend response:', response);
       // Store the tokens from your backend
       useAuth.getState().login({
-        accessToken: response.access_token,
-        refreshToken: response.refresh_token,
+        accessToken: response.access,
+        refreshToken: response.refresh,
         // user: response.user,
-      });
+        }
+      );
+      console.log(useAuth.getState());
     } catch (error) {
       console.error('Google login failed', error);
       Alert.alert('Error', 'Google login failed. Please try again.');
