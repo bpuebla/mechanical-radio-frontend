@@ -19,7 +19,7 @@ export const refresh = (refreshToken: string) =>
   });
 
 export const googleLogin = async (googleToken: string) =>
-  request('/auth/refresh', {
+  request('/auth/google/mobile/callback', {
     method: 'POST',
     body: JSON.stringify({ token: googleToken }),
   });

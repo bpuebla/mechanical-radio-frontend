@@ -1,4 +1,4 @@
-package com.awesomeproject
+package com.wappiti.radio
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
@@ -19,4 +19,10 @@ class MainActivity : ReactActivity() {
    */
   override fun createReactActivityDelegate(): ReactActivityDelegate =
       DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled)
+  
+  override fun onNewIntent(intent: android.content.Intent?) {
+    super.onNewIntent(intent)
+    setIntent(intent)
+    // Handle the new intent if needed
+  }
 }

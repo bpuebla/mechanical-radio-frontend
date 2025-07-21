@@ -8,10 +8,8 @@ import commonStyles from '../styles/common'; // Adjust the import path as needed
 const config = {
   issuer: 'https://accounts.google.com',
   clientId: '498087978027-vvnrle4b2hmg8lnf9b7rv2qo72i0uvhu.apps.googleusercontent.com', // Replace with your Google Client ID
-  redirectUrl: 'com.yourapp://oauth', // Replace with your app's redirect URL
+  redirectUrl: 'com.wappiti.radio:/oauth2redirect/google', // Replace with your app's redirect URL
   scopes: ['openid', 'profile', 'email'],
-  additionalParameters: {},
-  customHeaders: {},
 };
 
 const GoogleLoginButton = () => {
@@ -22,7 +20,7 @@ const GoogleLoginButton = () => {
     try {
       // Authorize with Google
       const result = await authorize(config);
-      
+      console.log('Google login result:', result);
       // Send the token to your backend
       const response = await googleLogin(result.accessToken);
       
