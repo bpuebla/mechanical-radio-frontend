@@ -1,35 +1,96 @@
 package com.mockingbird.radio
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import com.mockingbird.radio.databinding.ActivityMainBinding
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
+import com.mockingbird.radio.ui.screens.HomeScreen
 
-class MainActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityMainBinding
-
+class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        val navView: BottomNavigationView = binding.navView
-
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
-            )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+        setContent {
+            MaterialTheme {
+                MainScreen()
+            }
+        }
     }
 }
+
+@Composable
+fun MainScreen() {
+    var selectedItem by remember { mutableIntStateOf(0) }
+    var playing by remember { mutableStateOf(false) }
+    
+    val items = listOf(
+        BottomNavItem("Home", Icons.Filled.Home, 0),
+        // add more later like:
+        // BottomNavItem("Settings", Icons.Filled.Settings, 1),
+        // BottomNavItem("Library", Icons.Filled.LibraryMusic, 2)
+    )
+    
+    Scaffold(
+        bottomBar = {
+            NavigationBar(
+                containerColor = Color(0xFF1C1C1E),
+                contentColor = Color(0xFFDDB880)
+            ) {
+                items.forEachIndexed { index, item ->
+                    NavigationBarItem(
+                        icon = { 
+                            Icon(
+                                item.icon, 
+                                contentDescription = item.label,
+                                tint = if (selectedItem == index) Color(0xFFDDB880) else Color(0xFF666666)
+                            ) 
+                        },
+                        label = { 
+                            Text(
+                                item.label,
+                                color = if (selectedItem == index) Color(0xFFDDB880) else Color(0xFF666666)
+                            ) 
+                        },
+                        selected = selectedItem == index,
+                        onClick = { selectedItem = index },
+                        colors = NavigationBarItemDefaults.colors(
+                            selectedIconColor = Color(0xFFDDB880),
+                            selectedTextColor = Color(0xFFDDB880),
+                            unselectedIconColor = Color(0xFF666666),
+                            unselectedTextColor = Color(0xFF666666),
+                            indicatorColor = Color(0xFF2C2C2E)
+                        )
+                    )
+                }
+            }
+        }
+    ) { paddingValues ->
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(paddingValues)
+        ) {
+            when (selectedItem) {
+                0 -> HomeScreen(
+                    playing = playing,
+                    onTogglePlayPause = { playing = !playing }
+                )
+                // add more screens later:
+                // 1 -> SettingsScreen()
+                // 2 -> LibraryScreen()
+            }
+        }
+    }
+}
+
+data class BottomNavItem(
+    val label: String,
+    val icon: ImageVector,
+    val index: Int
+)

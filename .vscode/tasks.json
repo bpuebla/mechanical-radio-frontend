@@ -1,0 +1,7 @@
+{
+  "label": "run android app",
+  "type": "shell",
+  "command": "./gradlew installDebug && adb shell am start -n com.mockingbird.radio/.MainActivity",
+  "group": "build",
+  "problemMatcher": []
+}
