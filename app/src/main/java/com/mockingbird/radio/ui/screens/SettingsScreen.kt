@@ -21,9 +21,7 @@ import com.mockingbird.radio.ui.components.RadioDial
 
 
 @Composable
-fun HomeScreen(
-    playing: Boolean,
-    onTogglePlayPause: () -> Unit
+fun SettingsScreen(
 ) {
     Column(
         modifier = Modifier
@@ -34,7 +32,7 @@ fun HomeScreen(
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = "Mechanical Radio",
+            text = "Settings",
             style = TextStyle(
                 fontSize = 28.sp,
                 fontWeight = FontWeight.SemiBold,
@@ -42,12 +40,29 @@ fun HomeScreen(
             ),
             modifier = Modifier.padding(bottom = 20.dp)
         )
-        
-        RadioDial(playing = playing)
-        Spacer(modifier = Modifier.height(20.dp))
-        PlayButton(
-            playing = playing,
-            onPress = onTogglePlayPause
+        Text(
+            text = "Settings",
+            style = TextStyle(
+                fontSize = 28.sp,
+                fontWeight = FontWeight.Normal,
+                color = Color(0xFFDDB880)
+            ),
+            modifier = Modifier.padding(bottom = 20.dp)
         )
+        TextField(
+            value = "",
+            onValueChange = {},
+            label = { Text("Search Settings") },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 20.dp),
+            // colors = TextFieldDefaults.textFieldColors(
+            //     focusedIndicatorColor = Color(0xFFDDB880),
+            //     unfocusedIndicatorColor = Color(0xFF666666),
+            //     textColor = Color(0xFFDDB880)
+            // )
+        )
+        
+        
     }
 }
