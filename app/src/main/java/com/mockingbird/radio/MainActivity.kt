@@ -79,14 +79,8 @@ fun MainScreen() {
                 .padding(paddingValues)
         ) {
             when (selectedItem) {
-                0 -> HomeScreen(
-                    playing = playing,
-                    onTogglePlayPause = { playing = !playing }
-                )
+                0 -> HomeScreen()
                 1 -> SettingsScreen()
-                // add more screens later:
-                // 1 -> SettingsScreen()
-                // 2 -> LibraryScreen()
             }
         }
     }

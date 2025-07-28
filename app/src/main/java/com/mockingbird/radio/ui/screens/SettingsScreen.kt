@@ -16,8 +16,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mockingbird.radio.ui.components.PlayButton
-import com.mockingbird.radio.ui.components.RadioDial
+import com.mockingbird.radio.ui.components.FormPart
 
 
 @Composable
@@ -40,28 +39,9 @@ fun SettingsScreen(
             ),
             modifier = Modifier.padding(bottom = 20.dp)
         )
-        Text(
-            text = "Settings",
-            style = TextStyle(
-                fontSize = 28.sp,
-                fontWeight = FontWeight.Normal,
-                color = Color(0xFFDDB880)
-            ),
-            modifier = Modifier.padding(bottom = 20.dp)
-        )
-        TextField(
-            value = "",
-            onValueChange = {},
-            label = { Text("Search Settings") },
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(bottom = 20.dp),
-            // colors = TextFieldDefaults.textFieldColors(
-            //     focusedIndicatorColor = Color(0xFFDDB880),
-            //     unfocusedIndicatorColor = Color(0xFF666666),
-            //     textColor = Color(0xFFDDB880)
-            // )
-        )
+        FormPart(title = "Topic")
+        FormPart(title = "IDK")
+        FormPart(title = "otherone")
         
         
     }

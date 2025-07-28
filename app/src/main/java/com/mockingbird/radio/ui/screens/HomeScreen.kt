@@ -18,13 +18,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mockingbird.radio.ui.components.PlayButton
 import com.mockingbird.radio.ui.components.RadioDial
-
+import com.mockingbird.radio.ui.viewmodels.HomeScreenViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
 fun HomeScreen(
-    playing: Boolean,
-    onTogglePlayPause: () -> Unit
+    viewModel: HomeScreenViewModel = viewModel()
 ) {
+    val isPlaying by viewModel.isPlaying.collectAsState()
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -43,11 +44,11 @@ fun HomeScreen(
             modifier = Modifier.padding(bottom = 20.dp)
         )
         
-        RadioDial(playing = playing)
+        RadioDial(playing = isPlaying)
         Spacer(modifier = Modifier.height(20.dp))
         PlayButton(
-            playing = playing,
-            onPress = onTogglePlayPause
+            playing = isPlaying,
+            onPress = viewModel::togglePlayPause
         )
     }
 }
