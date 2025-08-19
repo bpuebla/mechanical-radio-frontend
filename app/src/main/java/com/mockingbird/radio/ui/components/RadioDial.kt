@@ -31,8 +31,7 @@ fun RadioDial(playing: Boolean) {
                 shape = CircleShape,
                 ambientColor = Color.Black.copy(alpha = 0.2f),
                 spotColor = Color.Black.copy(alpha = 0.2f)
-            )
-            .padding(bottom = 20.dp),
+            ),
         contentAlignment = Alignment.Center
     ) {
         Text(

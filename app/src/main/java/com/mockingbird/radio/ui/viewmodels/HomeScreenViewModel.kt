@@ -15,7 +15,7 @@ class HomeScreenViewModel : ViewModel() {
     val isPlaying: StateFlow<Boolean> = _isPlaying.asStateFlow()
     
     private var mediaPlayer: MediaPlayer? = null
-    private val radioUrl = "YOUR_MP3_URL_HERE" // replace w/ actual url
+    private val radioUrl = "https://samplelib.com/lib/preview/mp3/sample-6s.mp3" // example radio stream
     
     fun togglePlayPause() {
         viewModelScope.launch {
@@ -36,9 +36,10 @@ class HomeScreenViewModel : ViewModel() {
                     setOnPreparedListener {
                         start()
                         _isPlaying.value = true
+                        Log.d("HomeScreenViewModel", "Radio started playing")
                     }
                     setOnErrorListener { _, what, extra ->
-                        Log.e("HomeScreenViewModel", "mediaplayer error: $what, $extra")
+                        Log.e("HomeScreenViewModel", "MediaPlayer error: what=$what, extra=$extra")
                         _isPlaying.value = false
                         true
                     }
@@ -46,9 +47,10 @@ class HomeScreenViewModel : ViewModel() {
             } else {
                 mediaPlayer?.start()
                 _isPlaying.value = true
+                Log.d("HomeScreenViewModel", "Radio resumed")
             }
-        } catch (e: IOException) {
-            Log.e("HomeScreenViewModel", "failed to play radio", e)
+        } catch (e: Exception) {
+            Log.e("HomeScreenViewModel", "Failed to play radio: ${e.message}", e)
             _isPlaying.value = false
         }
     }
